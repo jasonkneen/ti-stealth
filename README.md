@@ -65,12 +65,14 @@ Hit `ti-stealth -h` for full usage, but these examples should do:
 
 ### Module
 If you use Stealth as a CommonJS module pass the input as the first argument and the options as the second. You will be returned an array of files changed:
+
 ```
 var stealth = require('ti-stealth');
 
 stealth.enable('/usr/admin/myproject', {
 	levels: ['info']
 });
+```
 
 Some notes:
 
