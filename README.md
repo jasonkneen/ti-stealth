@@ -42,10 +42,10 @@ Hit `ti-stealth -h` for full usage, but these examples should do:
 	$ ti-stealth enable ~/myproject -l debug,info
 	```
 	
-- Processes the given file:
+- Processes the given file to stealth all but error level caals:
 
 	```
-	$ ti-stealth enable ~/myproject/app/alloy.js
+	$ ti-stealth enable ~/myproject/app/alloy.js -n error
 	```	
 	
 - Processes the given file to restore all stealthed info level log calls:
@@ -70,7 +70,8 @@ If you use Stealth as a CommonJS module pass the input as the first argument and
 var stealth = require('ti-stealth');
 
 stealth.enable('/usr/admin/myproject', {
-	levels: ['info']
+	levels: ['info'],
+	notLevels: ['error']
 });
 ```
 

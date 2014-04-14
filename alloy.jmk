@@ -1,0 +1,14 @@
+task("post:compile", function(event, logger) {
+
+  // adjust trigger to your liking
+  if (event.alloyConfig.deployType === 'production') {
+
+    // assumes ti-steath is installed global
+    require('ti-stealth').enable(event.dir.resources, {
+
+      // adjust levels to your liking
+      notLevels: 'error'
+    });
+  }
+
+});

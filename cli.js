@@ -13,7 +13,8 @@ program
   .version(package.version, '-v, --version')
   .description(package.description)
   .usage('command <args> [options]')
-  .option('-l, --levels <levels>', 'process only certain levels of logging');
+  .option('-l, --levels <levels>', 'process only certain levels of logging')
+  .option('-n, --not-levels <levels>', 'process not certain levels of logging');
 
 program.command('enable [input]')
   .description('enable stealth by replacing log calls with NOOPs')

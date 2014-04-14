@@ -1,4 +1,5 @@
-var should = require('should'),
+var _ = require('underscore'),
+  should = require('should'),
   helpers = require('../lib/helpers'),
   constants = require('../lib/constants');
 
@@ -30,7 +31,7 @@ describe('helpers', function() {
 
     var custom = {
       input: 'Some code',
-      levels: 'error,debug'
+      l: 'error,debug'
     };
 
     var opts = helpers.init(custom);
@@ -49,11 +50,11 @@ describe('helpers', function() {
 
   });
 
-  describe('init with file & array levels', function() {
+  describe('init with file & array of negative levels', function() {
 
     var custom = {
       input: __filename,
-      levels: ['info', 'warn']
+      notLevels: ['error']
     };
 
     var opts = helpers.init(custom);
@@ -67,7 +68,7 @@ describe('helpers', function() {
     });
 
     it('should have a levels property containing only error and debug', function() {
-      opts.levels.should.be.an.Array.and.eql(['info', 'warn']);
+      opts.levels.should.be.an.Array.and.eql(_.without(constants.LEVELS, 'error'));
     });
 
   });
