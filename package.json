@@ -1,0 +1,51 @@
+{
+  "name": "ti-stealth",
+  "preferGlobal": true,
+  "version": "0.0.0",
+  "description": "Remove console logging from your Titanium apps.",
+  "homepage": "https://github.com/fokkezb/ti-stealth",
+  "main": "index.js",
+  "bin": {
+    "ti-stealth": "./cli.js"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fokkezb/ti-stealth.git"
+  },
+  "keywords": [
+    "titanium",
+    "alloy",
+    "appcelerator",
+    "apps",
+    "logging",
+    "console"
+  ],
+  "author": {
+    "name": "Fokke Zandbergen",
+    "email": "mail@fokkezb.nl",
+    "url": "http://fokkezb.nl"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fokkezb/ti-stealth/issues"
+  },
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "commander": "~2.1.0",
+    "colors": "~0.6.2",
+    "update-notifier": "~0.1.7",
+    "fs-extended": "~0.2.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-mocha-test": "~0.8.1",
+    "mocha": "~1.17.0",
+    "should": "~3.1.2"
+  }
+}
