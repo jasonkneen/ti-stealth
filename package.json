@@ -1,7 +1,7 @@
 {
   "name": "ti-stealth",
   "preferGlobal": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Remove console logging from your Titanium apps.",
   "homepage": "https://github.com/fokkezb/ti-stealth",
   "main": "index.js",
