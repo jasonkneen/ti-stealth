@@ -70,7 +70,6 @@ If you use Stealth as a CommonJS module pass the input as the first argument and
 var stealth = require('ti-stealth');
 
 stealth.enable('/usr/admin/myproject', {
-	levels: ['info'],
 	notLevels: ['error']
 });
 ```
