@@ -17,8 +17,8 @@ describe('helpers', function() {
       opts.input.should.equal(process.cwd());
     });
 
-    it('should have a type property equal to "path"', function() {
-      opts.type.should.equal('path');
+    it('should have a type property equal to "dir"', function() {
+      opts.type.should.equal('dir');
     });
 
     it('should have a levels property containing all default levels', function() {
