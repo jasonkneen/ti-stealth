@@ -24,22 +24,24 @@ As a dependency in your projects `package.json`:
 ## Quick Start
 Stealth can be used both as CLI and CommonJS module.
 
+> *NOTE:* Be aware that running `ti-stealth` in your project root with no path will also affect the scripts in your modules folder for example. For an Alloy project you will want to run in or set the path to `app` and for classic `Resources`.
+
 ### Alloy.JMK
 The number one usage for this package is to remove all other then error logging from production builds. The included example `alloy.jmk` can be dropped in your Alloy project's `app` folder or merged with whatever you have there. It will automatically stealth all the logs calls when you build for production (includes *Ad Hoc*), without changing anything in your `app` folder.
 
 ### CLI
 Hit `ti-stealth -h` for full usage, but these examples should do:
 
-- Processes all JS under the CWD to stealth all log calls:
+- Processes all JS under the CWD (Alloy's `app` folder) to stealth all log calls:
 
 	```
-	~/myproject $ ti-stealth enable
+	~/myproject/app $ ti-stealth enable
 	```
 	
 - Processes the given directory to stealth only debug and info level calls:
 
 	```
-	$ ti-stealth enable ~/myproject -l debug,info
+	$ ti-stealth enable ~/myproject/app -l debug,info
 	```
 	
 - Processes the given file to stealth all but error level caals:
@@ -69,7 +71,7 @@ If you use Stealth as a CommonJS module pass the input as the first argument and
 ```
 var stealth = require('ti-stealth');
 
-stealth.enable('/usr/admin/myproject', {
+stealth.enable('/usr/admin/myproject/app', {
 	notLevels: ['error']
 });
 ```
